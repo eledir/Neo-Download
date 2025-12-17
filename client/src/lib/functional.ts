@@ -115,11 +115,11 @@ export const getAppointmentStats = (appointments: Appointment[]) => {
 };
 
 export const getUniqueDoctors = (appointments: Appointment[]): string[] => {
-  return [...new Set(appointments.map((apt) => apt.doctorName))];
+  return Array.from(new Set(appointments.map((apt) => apt.doctorName)));
 };
 
 export const getUniqueSpecialties = (appointments: Appointment[]): string[] => {
-  return [...new Set(appointments.map((apt) => apt.specialty))];
+  return Array.from(new Set(appointments.map((apt) => apt.specialty)));
 };
 
 export const pipe = <T>(...fns: Array<(arg: T) => T>) => (value: T): T =>
